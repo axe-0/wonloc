@@ -1,0 +1,142 @@
+{% load static %}
+
+<div class="bounty-hub-area">
+    <div class="head-bount-con">
+        <h3 class="guild-heading">💬THREADS -DISCUSSIONS</h3>
+    </div>
+   
+    <div class="thread-list-con">
+        {% for post in threadz %}
+        <div class="thread-obj-con">
+            <div class="thead-con">
+                <h5 class="post-title">{{post.title|upper}}</h5>
+            </div>
+            <div class="tline-con">
+                <div class="tline-dotted"></div>
+            </div>
+            <div class="thread-par-con">
+                <p class="tpar">{{post.content}}</p>
+            </div>
+            <div class="tlast-line-con">
+                <div class="comment-button">
+
+                    <a href="#" id="comment-button">
+                        <img src="{% static 'Vector.svg' %}" alt="comment-button"   class="img-comment">
+                    </a>
+                </div>
+                <div class="like-button" id="like-button">
+                    {%if user in post.post_likes.all %}
+                        <a href="{%url 'hub:toggle_like' post.id%}" class="toggle-like">
+                            <div  id="like-butt" class="likecon-con">
+                                <p class="likin heart-moji" >&#10084;&#65039;</p>
+                            </div>
+                            
+                        </a>
+                    
+                    {% else %}
+                        <a href="{%url 'hub:toggle_like' post.id%}" class="toggle-like">
+                            <div  id="like-butt" class="likecon-con">
+                                <img src="{% static 'like.svg' %}" alt="like-button" id="like-butt" class="img-like likin">
+                            </div>  
+                        </a> 
+                    {% endif %}
+                    
+                </div>
+                <div class="cate-con">
+                    <div class="cat-box">
+                        <p>{{post.category|upper}}</p>
+                    </div>
+                </div>
+                <div class="type-con">
+                    <div class="type-box">
+                        <p class="typ-text">{{post.type|upper}}</p>
+                    </div>
+                </div>
+                <div class="user-con">
+                    <div class="user-box">
+                        <p class="user-name">@{{post.user.first_name|lower}}</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="comment-ara"  class="comment-area-con" >
+                <div class="comment-input-area">
+                    <div class="com-input-con">
+                        <form id="post-com-form" action="{%url 'hub:save_comment' post.id %}" method="post">
+                            {% csrf_token %}
+                            <p>-comment as <span class="user-comm-text">@{{ user.first_name|lower }}</span></p>
+                            <div class="content-box-con">{{form.content}}</div>
+                            <input type="submit" value="SUBMIT">
+                        </form> 
+                    </div>
+                </div>
+                <div class="comment-display-con" id="comment-display">
+                    {% for comment in comments %}
+                    <div>
+                        {% if comment.post == post %}
+                        <div class="comment-con">
+                            <p class="com-user">@{{ comment.user.first_name|lower }}</p>
+                            <div class="content-con">
+                                <p class="comm-text">{{ comment.content }}</p>
+                            </div>
+                            
+                        </div>
+                        {% endif %}
+                       
+                    </div>
+                    {% endfor %}
+                    
+                </div>
+
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<!-- Add JavaScript to handle the AJAX request -->
+<script>
+    $(document).ready(function(){
+        $('.toggle-like').click(function (e){
+            e.preventDefault();//stop link from going to new page
+
+            // Get the post ID from the link's href attribute 
+            var postID = $(this).attr('href').split('/').pop();
+            
+
+            $.ajax({
+                url: "{%url 'hub:toggle_like' post_id=0 %}".replace(0,postID),
+                type: 'GET',
+                success: function (respone){
+                    if (respone.liked){
+                        $('#like-butt').html('<p class="likin heart-moji">&#10084;&#65039;</p>');
+                    } else {
+                        $('#like-butt').html('<img src="{% static 'like.svg'%}" alt="like-button" id="co" class="img-like likin">');
+
+                    }
+                    var urlat = '/hub/toggle_like/' + postID 
+                    // Re-add the href attribute
+                    $('#like-button a.toggle-like').attr('href', urlat);
+                },
+                error: function(xhr,errmsg,err) {
+                    console.log(xhr.status+":"+xhr.responseText);
+                }
+            });
+        });
+
+    });
+
+    //get comment button ID 
+
+    var comment_icon = document.getElementById("comment-button");
+    var comm_area= document.getElementById("comment-ara");
+
+    //on click of icon hide or reveal comment area
+    comment_icon.addEventListener("click", function(event){
+        if(comm_area.style.display=="none"){
+            comm_area.style.display="block";
+        }else{
+            comm_area.style.display = "none";
+        }
+    });
+</script>

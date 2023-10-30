@@ -1,0 +1,100 @@
+{% extends "object_header.html" %}
+{%load static%}
+
+{% block panel %}
+<div class="panel-bount-con">
+    <div class="panel-con">
+        {% include "bounty.html" %}
+    </div>
+    
+</div>
+{% endblock %}
+
+
+{%block content%}
+<div class="main_application_area">
+    <div class="right_apply_con par-con">
+        <div class="apply-title-con">
+            <h5 class="fund-text-head">TITLE <span class="fountain-pen-emoji">&#128395;:</span> </h5>
+            <h5 class="head-apply fund-text-head">{{application_info.apply_title}}</h5>
+        </div>
+        <div class="intro-par-con par-con">
+            <p class="par-title par-hd">INTRODUCTION:</p>
+            <br>
+            <p class="ap-intro-par">{{application_info.intro}}</p>
+        </div>
+        <div class="why-contrib-con par-con">
+            <p class="par-title par-hd">WHY CONTRIBUTE:</p>
+            <br>
+            <p class="ap-why-par">{{application_info.why_contribute}}</p>
+        </div>
+         
+    </div>
+
+    
+
+    <div class="application-form-con">
+        <h5 class="par-hd">APPLY BELOW <span>&#128221;:</span></h5>
+        <form action="{%url 'hub:submission'%}" method="post" enctype="multipart/form-data" class="app-form">
+            {% csrf_token %}
+
+            {{ form.as_p }}
+            <button type="submit" class="sub-button">SUBMIT APPLICATION</button>
+        </form>
+    </div>
+    <br>
+    <br>
+    <br>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Your application has been submitted successfully! <span>&#128512;</span></p>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    
+
+
+</div>
+
+
+  
+
+
+<script>
+  // Get the modal element
+  var modal = document.getElementById("myModal");
+
+
+  // Display the modal when needed
+  window.onload = function() {
+      var success = "{{ success }}";
+      if (success === "True") {
+          modal.style.display = "block";
+      }
+      else {
+        modal.style.display = "none"
+      }
+  }
+
+  // Get the close button
+  var closeButton = document.getElementsByClassName("close")[0];
+
+  // Close the modal when the close button is clicked
+  closeButton.onclick = function() {
+      modal.style.display = "none";
+  }
+
+  // Close the modal if the user clicks outside of it
+  window.onclick = function(event) {
+      if (event.target == modal) {
+          modal.style.display = "none";
+      }
+  }
+</script>
+{% endblock%}

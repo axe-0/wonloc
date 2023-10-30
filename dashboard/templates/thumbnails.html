@@ -1,0 +1,50 @@
+{% extends 'discover_home.html' %}
+{% load static %}
+
+{% block thumbnail_area  %}
+
+<div class="thumbs-con">
+    {% for thumbnail in object_list %}
+    <div class="comm-con">
+        <div class="thumbn-con">
+            <a href="{%url 'dashboard:guildpage' thumbnail.thumbnail_id %}">
+                <div class="thumb-text-con">
+                    <h3 class="thumb-head">{{thumbnail.title}}</h3>
+                    <p class="thumb-par">{{thumbnail.guild_text}}</p>
+                    <div class="thumb-line"></div>
+                </div>
+                <img src="{{thumbnail.image.url}}" alt="{{thumbnail.image.title}} " class="img-thumb">
+                <div class="overlay"></div>
+            </a>
+        </div>
+        {%if thumbnail.status|lower == "online" %}
+        <div class="stat-con">
+            <div class="stat-box-on">
+                <p class="stat-text">{{thumbnail.status}}</p>
+            </div>
+            
+        </div>
+        {% else %}
+        <div class="stat-con">
+            <div class="stat-box">
+                <p class="stat-text">{{thumbnail.status}}</p>
+            </div>
+            
+        </div>
+        {% endif %}
+
+    </div>
+   
+    {% endfor %}
+</div>
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,81 @@
+{% extends "object_header.html" %}
+{%load static%}
+
+{% block panel %}
+<div class="panel-bount-con">
+    <div class="panel-con">
+        {% include "bounty.html" %}
+    </div>
+    
+</div>
+{% endblock %}
+
+
+{%block content%}
+<div class="main_bount_area">
+    <div class="left_bount_con"></div>
+    <div class="right_bount_details">
+        <div class="sec-con">
+            <h5 class="fund-text-head"><span class="fountain-pen-emoji">&#128395;</span> TITLE: </h5>
+            <h5 class="fund-text-head">{{bounty_dets.bounty_title|upper}}</h5>
+        </div>
+        
+        <div class="sec-con">
+            <p class="par-title par-hd">📍LOCATION:</p>
+            <p>{{bounty_dets.location}}</p>
+        </div>
+        
+        <div class="sec-con">
+            <p class="par-title par-hd">📃 DESCRIPTION:</p>
+                <br>
+            <p>{{bounty_dets.despriction}}</p>
+        </div>
+        
+        <div class="sec-con">
+            <p class="par-title par-hd">- OVERVIEW:</p>
+                <br>
+            <p>{{bounty_dets.overview}}</p>
+        </div>
+        
+        <div class="sec-con">
+            <p class="par-title par-hd">- RESPONSIBILITIES:</p>
+                <br>
+            <p>{{bounty_dets.responsibilities}}</p>
+        </div>
+        
+        <div class="sec-con">
+            <p class="par-title par-hd">- QUALIFICATIONS:</p>
+                <br>
+            <p>{{bounty_dets.qualifications}}</p>
+        </div>
+        
+        <div class="sec-con">
+            <br>
+            <p>{{bounty_dets.inclosing}}</p>
+        </div>
+        
+        <div class="sec-con">
+            <p class="par-title par-hd">💎BOUNTY VALUE:</p>
+            <p>R {{bounty_dets.value}}</p>
+        </div>
+        
+    </div>
+
+    <div class="button-bount-con">
+        {% for apply in bounty_dets.apply_set.all %}
+        <button class="button-mainstyle butt-apply"><a href="{%url 'hub:bountyapply' apply.id %}">APPLY</a></button>
+        {% endfor %}
+        {% for fund in bounty_dets.fund_set.all %}
+        <button class="button-mainstyle butt-fund"><a href="{%url 'hub:bountyfund' fund.id %}">$FUND</a></button>
+        {% endfor %}
+        
+    </div>
+    <br>
+    <br>
+    <br>
+
+</div>
+
+
+
+{% endblock%}

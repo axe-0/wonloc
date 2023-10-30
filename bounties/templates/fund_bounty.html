@@ -1,0 +1,73 @@
+{% extends "object_header.html" %}
+{%load static%}
+
+{% block panel %}
+<div class="panel-bount-con">
+    <div class="panel-con">
+        {% include "bounty.html" %}
+    </div>
+    
+</div>
+{% endblock %}
+
+{%block content%}
+<div class="main_fund_area">
+    <div class="right_fund_con">
+        <div class="fund-head">
+            <h5 class="fund-text-head"><span class="fountain-pen-emoji">&#128395;</span>TITLE:</h5>
+            <h5 class="fund-text-head"> {{fund_info.fund_title|upper}}</h5>
+        </div>
+        
+        <div class="fund-par-cons">
+            <div class="intro-fund-con ">
+                <p class="par-title par-hd">📃INTRODUCTION:</p>
+                <br>
+                <p class="fun-par">{{fund_info.intro}}</p>
+            </div>
+            <div class="overview-fund-con">
+                <p class="par-title par-hd">- OVERVIEW:</p>
+                <br>
+                <p class="fun-par">{{fund_info.overview}}</p>
+            </div>
+            <div class="whysupp-fund-con">
+                <p class="par-title par-hd">- WHY YOUR SUPPORT MATTERS:</p>
+                <br>
+                <p class="fun-par">{{fund_info.why_support}}</p>
+            </div>
+            <div class="help-fund-con">
+                <p class="par-title par-hd">- HOW YOU CAN HELP:</p>
+                <br>
+                <p class="fun-par">{{fund_info.how_to_help}}</p>
+            </div>
+        </div>
+        
+        <div class="dontae-head-con">
+            <p class="donate-text par-hd">💸 DONATE BELOW AND PART OF THIS EXCITING INITIATIVE:</p>
+        </div>
+        <div class="pmt-methods-con">
+            <div class="pmt-method-grid">
+               
+                <div class="img-qrcode-con">
+                    <img src="{{fund_info.qr_code.url}}" alt="{{fund_info.image.title}}" class="img-fund-qr">
+                </div>
+                <div class="cs-pmts-con">
+                    <div class="cs-con">
+                        <p>COMING SOON!</p>
+                    </div>
+                    <div class="top-layer-pmt">
+                        <img src="{%static 'images/payment/🦆 icon _visa line_.png'%}" alt="visa-logo" class="img-visa">
+                        <img src="{%static 'images/payment/🦆 icon _apple fill_.png'%}" alt="apple-logo" class="img-apple">
+                        <img src="{%static 'images/payment/🦆 icon _google fill_.png'%}" alt="google-logo" class="img-google">
+                    </div>
+                    <div class="bottom-layer-pmt">
+                        <img src="{%static 'images/payment/logosnapscan.png'%}" alt="snapsacn-logo" class="img-snap">
+                        <img src="{%static 'images/payment/polygonLogo 1.png'%}" alt="polygon-logo" class="img-polygon">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+{% endblock%}

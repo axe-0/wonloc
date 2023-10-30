@@ -1,0 +1,26 @@
+{% load static %}
+
+<div class="bounty-hub-area">
+    <div class="head-bount-con">
+        <h3 class="guild-heading">📂GUILD LIBRARY</h3>
+    </div>
+    <div class="hub-about">
+        <p class="hub-about-text">CURATED GUILD RESOURCES TO HELP ACCELARATE YOUR CREATING JOURNEY.</p>
+    </div>
+
+    <div class="library-items">
+        {% for item in library%}
+        <div class="item-lib-con">
+            <img src="{{item.image.url}}" alt="thumbnail" class="img-lib-thumb">
+            <div class="text-con-links">
+                <a class="file-link" href="{{ item.file.url }}" download>{{ item.title }}</a>
+                <div class="cate-box-con">
+                    <p class="cat-lib-link">{{ item.category|upper }}</p>
+                </div>
+                
+            </div>
+            
+        </div>
+    {% endfor %}
+    </div>
+</div>

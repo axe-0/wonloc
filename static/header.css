@@ -1,0 +1,945 @@
+@font-face {
+    font-family: 'Disket-Mono-Bold';
+    src: url('/fonts/Disket-Mono-Bold.woff') format('woff');
+    src: url('fonts/Disket-Mono-Bold.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Disket-Mono-Regular';
+    src: url('fonts/Disket-Mono-Regular.woff') format('woff');
+    src: url('fonts/Disket-Mono-Regular.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'DMMONO-Light';
+    src: url('fonts/DMMono-Light.woff') format('woff');
+    src: url('fonts/DMMono-Light.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'DMMONO-Medium';
+    src: url('fonts/DMMono-Medium.woff') format('woff');
+    src: url('fonts/DMMono-Medium.woff2') format('woff2');
+}
+
+/*Defaluts------------------------------------------------------------------------*/
+body,h1,h2,h3,p,ul,li,form{
+    margin:0.625rem;
+    padding:0;
+    }
+
+body{
+    font-family:'DMMONO-Light';
+    font-size: 0.7rem;
+    line-height:1.6;
+    color:#212121;
+    background: color #fbf8f3;;
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
+    padding:0;
+    max-width: 100%;
+    overflow-x: hidden;
+    max-height: 105vh;
+    }   
+    @media(max-width: 575.98px){
+        body{
+        font-size: 0.625rem;
+         }
+        }
+
+.container,
+.row,
+.col-sm-12,
+.col-md-9,
+.col-md-3{
+    margin: 0px;
+}
+p{
+    all: unset;
+}
+ul{
+    list-style-type: none;
+}
+.bot_con{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+li{
+    list-style-type: none;
+}
+/*Object view page------------------------------------------------------------------------*/
+.content_grid{
+    margin: 0rem 1.2rem;
+    display: grid;
+    grid-template-columns: 25% 75%;
+
+}
+.left-side-bar{
+    grid-column: 1;
+    height: 90vh;
+    position: fixed;
+    max-width: 23vw;
+    
+}
+.right-main-area{
+    margin-top: 1rem;
+    grid-column: 2;
+    border-left: 1px dotted #212121;
+    padding-left: 2rem;
+}
+.line-obj{
+    max-width: 43rem;
+    margin-right: 2rem;
+}
+.right-top-ob{
+    display: flex;
+    margin-bottom: 2rem;
+}
+
+.panel-con{
+   margin-top: 3rem;
+   margin-right: 1.4rem;
+}
+.obj-con{
+    margin-left: -1rem;
+}
+.vert-line-con{
+    height: 100%;
+}
+.odj-header{
+    display: flex;
+    justify-content: space-between;
+}
+.guildhome-con{
+    margin-top: 1.5rem;
+    margin-right: 2rem;
+}
+.guild-home-text{
+    font-size: 0.8rem;
+}
+.guild-home-text:hover{
+    color:#F29441;
+}
+
+/*Landing page------------------------------------------------------------------------*/
+.hd-con{
+    display: flex;
+    justify-content: space-between;
+
+}
+.logo{
+    font-family:'Disket-Mono-Bold';
+    font-size:1.1rem ;
+}
+.logo:hover{
+    color: #BF372A;
+}
+
+.line-lie{
+    border-bottom: 1px solid #212121;
+    width: 63rem;
+    margin-top: 0.8rem;
+
+}
+.launch-con{
+    margin-top: 0.2rem;
+}
+a{
+    color: #212121;
+    text-decoration: none;
+}
+.lan-link:hover{
+    color: #8BC3D9;
+}
+
+.main-body{
+    height: 65vh;
+}
+.para-con{
+    max-height: 40vh;
+    max-width: 95vw;
+   margin-top: 25vh;
+}
+.lan-text{
+    font-family:'Disket-Mono-Regular' ;
+    font-size: 4rem;
+    z-index: 2;
+}
+.ttf-grid{
+    display: grid;
+    grid-template-columns: 10% 75% 15%;
+    grid-template-rows: 33.3% 33.3% 33.3%;
+    max-height: 35vh;
+
+}
+.girl-pic{
+    grid-column: 1;
+    grid-row: 1/span 2;
+}
+.snd-line{
+    grid-column: 2/ span 3;
+    grid-row: 1;
+   justify-self: center;
+   align-self: center;
+}
+.thrd-line{
+    grid-column: 2;
+    grid-row: 2;
+   
+}
+.forth-line{
+    grid-column: 1 /span 3;
+    grid-row: 3;
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+}
+
+.guys-pic{
+    grid-column: 3;
+    grid-row: 2/ span 3;
+}
+.cure-square{
+    border: 2px solid #F29441;
+    border-radius: 23px;
+    height: 2rem;
+    width: 16rem;
+    align-self: center;
+    justify-self: center;
+    margin-top: 0.5rem;
+}
+
+.img-girl{
+    height: 100%;
+    height:10rem ;
+    width: auto;
+    z-index: -1;
+    margin-top: -0.3rem;
+}
+.img-guys{
+    height: 100%;
+    height:12rem ;
+    width: auto;
+    z-index: -1;
+
+
+}
+.FLO-O{
+    height: 100%;
+    height:5rem ;
+    width: auto;
+}
+.img-fltwo{
+    height: 100%;
+    height:5rem ;
+    width: auto;
+}
+
+/*Discover page------------------------------------------------------------------------*/
+
+/*Search bar ------------------*/ 
+.search-bar{
+    width: 27rem;
+    background: #212121;
+    border-radius: 24px;
+    padding: 0.1rem;
+    display: flex;
+    justify-content: center;
+    margin-top: 0.3rem;
+}
+.search-text{
+    color: #D9D9D9;
+}
+.welcome-con{
+    margin-top: 0.3rem;
+}
+
+
+/*Category filters  ------------------*/
+.content-discov{
+    margin-top: 2.5rem;
+    margin-left: 0.3rem;
+    height: 82vh;
+}
+.cs-box-con{
+    max-width: 70vw;
+    
+}
+.comingsoon-area{
+    display:flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    opacity: 60%;
+    margin: 0rem 1.2rem;
+}
+
+.filtr-con{
+    border: 1px solid #212121;
+    border-radius: 24px;
+    padding:0rem 0.3rem;
+    width: 5.3rem;
+    max-width: 5.3rem;
+    display: flex;
+    justify-content: center;
+}
+.flt-text{
+    font-size: 0.7rem;
+}
+
+.discrip-text{
+    margin-left: 1rem;
+}
+/* thumbnail area --------------------------- */
+.discov-area{
+    margin-top: 1.5rem;
+    margin-left: 0.2rem;
+}
+.thumbnail-con{
+    display: flex;
+    justify-content: space-between;
+    width : 100vw;
+    
+}
+.thumb-head{
+    text-transform: uppercase;
+    color: #D9D9D9;
+    font-family: 'Disket-Mono-Bold';
+    font-style: normal;
+    line-height: normal;
+    font-size: 1.2rem;
+    margin: 0rem;
+
+}
+.thumb-par{
+    color: #D9D9D9;
+}
+.thumbs-con{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    width: 75vw;
+    max-width: 75vw;
+    margin-left: 0.3rem;
+}
+.thumbn-con{
+    position: relative;
+    border-radius: 22px;
+    max-width: 10rem;   
+
+}
+.img-x-con{
+    margin-top: 2.5rem;
+}
+.thumbn-con:hover{
+    max-width: 12rem;
+}
+
+.img-thumb{
+ width: 100%;
+ width: 10rem;
+ height: auto;
+ filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+}
+.thumbn-con:hover .img-thumb{
+    width: 106%;
+    height: auto;
+}
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(217, 217, 217, 0.00) 0%, #212121ec 100%);
+    border-radius: 14px;
+    z-index: 1;
+}
+
+.thumbn-con:hover .overlay{
+    display: none;
+}
+
+.thumb-text-con{
+    position: absolute;
+    bottom: 10px; /* Adjust the positioning as needed */
+    left: 10px; /* Adjust the positioning as needed */
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.stat-con{
+    width: 10rem;
+    display: flex;
+    justify-content: center;
+    margin-top: 1.3rem;
+}
+.stat-box{
+    width: 6rem;
+    border-radius: 5px;
+    background: #F6F361;
+    display: flex;
+    justify-content: center;
+
+}
+.stat-box-on{
+    border-radius: 5px;
+    background: #DCFEBC;
+    width: 4rem;
+    display: flex;
+    justify-content: center;
+}
+.stat-text{
+    text-transform: uppercase;
+}
+
+/* Music hub   ------------------*/
+.music-hub-area{
+    margin-top: 2rem;
+    overflow: hidden;
+    max-height: 85vh;
+}
+.music-hub-grid{
+    display: grid;
+    grid-template-columns: 30% 40% 30%;
+}
+
+.first-col{
+    grid-column: 1;
+}
+.second-col{
+    grid-column: 2;
+    max-height: 75vh;
+    border-left: 1px dotted rgba(103, 51, 51, 0.35);
+    border-right: 1px dotted rgb(33, 33, 33, 0.35);
+    overflow-y: auto;
+}
+.third-col{
+    grid-column: 3;
+    overflow-y: auto;
+}
+
+.hub-head{
+    font-family: 'Disket-Mono-Bold';
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    color: #212121;
+ 
+}
+
+.f-col-con{
+    display: flex;
+    flex-direction: column;  
+}
+
+.hub-about{
+    margin-top: 1.2rem;
+    border-bottom: 1px dotted rgb(33, 33, 33, 0.35);
+    padding-bottom: 1rem;
+    
+}
+.hub-about-tex{
+    max-width: 25vw;
+}
+.bounty-area-con{
+    max-width: 25vw;
+}
+
+/* Bounty list hub   ------------------*/
+
+.bount-obj-con{
+    background-color: #212121;
+    border-radius: 24px;
+    padding: 0.3rem;
+    width: 20vw;
+    height: 10vw;
+    margin-top: 2rem;
+}
+
+.bount-obj-con:hover{
+    box-shadow: 5px 5px 12px #00000035;
+    border: 1px solid #ffffff75;
+    background: rgba(77, 70, 70, 0.3);
+    backdrop-filter: blur(17px);
+    
+}
+
+.bont:hover{
+    color: #212121;
+}
+
+
+.guild-heading{
+    margin-left: -0.7rem;
+    font-size: 1.5rem;
+    font-family: 'DMMONO-Medium';
+    color: #212121;
+ 
+}
+.top-bount-con{
+    display: flex;
+    justify-content: space-between;
+    margin: 0.3rem 1rem;
+}
+.bont{
+    font-size: 0.5rem;
+    color: #D9D9D9;
+}
+.line-bount{
+    border-top: 1px solid #D9D9D9;
+    width: 3rem;
+    margin-top: 0.3rem;
+}
+.bount-title{
+    font-family: 'Disket-Mono-Regular';
+    font-size: 0.8rem;
+    color: #D9D9D9;
+    margin: 0.4rem 0.3rem;
+}
+.button-bount-con{
+    display: flex;
+    justify-content: center;
+    margin-top: 0.4rem;
+
+}
+.button-mainstyle{
+    margin: 0rem 0.3rem;
+    border: none;
+}
+.butt-apply{
+ background-color: #DCFEBC ;
+}
+.butt-apply:hover{
+    background-color: #D9D9D9;
+}
+.butt-fund{
+    background-color: #8BC3D9 ;
+}
+.butt-fund:hover{
+    background-color: #D9D9D9;
+}
+.butt-cat{
+    background-color: #B8ADFA ;
+}
+.butt-cat:hover{
+    background-color: #D9D9D9;
+}
+
+/* Fund page------------------------------------------------------------------------*/
+.fund-text-head{
+    font-family:'Disket-Mono-Bold';
+}
+.fun-head{
+    display: flex;
+    margin-bottom: 1rem;
+}
+.fund-par-cons{
+    margin: 0rem 1rem;
+}
+.par-title{
+    font-style: normal;
+    font-weight: 500;
+    margin-top: 1rem;
+}
+.intro-fund-con,
+.overview-fund-con,
+.whysupp-fund-con,
+.help-fund-con{
+    margin-bottom: 0.6rem;
+}
+
+.dontae-head-con{
+    margin-top: 2.5rem;
+    margin-left: 1rem;
+}
+.donate-text{
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.pmt-method-grid{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    justify-content: flex-start;
+   
+}
+.cs-con{
+    background-color: #F29441;
+    padding: 0.4rem;
+    border-radius: 7px;
+    width: 6rem;
+}
+
+.img-qrcode-con{
+    grid-column: 1;
+    margin-top: 0.4rem;
+}
+.cs-pmts-con{
+    grid-column: 2;
+    margin-top: 8rem;
+}
+
+.top-layer-pmt{
+    display: flex;
+    margin-top: 0.6rem;
+
+}
+.bottom-layer-pmt{
+    display: flex;
+    margin-top: 0.8rem;
+}
+.img-visa,
+.img-apple,
+.img-google{
+    height: 100%;
+    height: 2.5rem;
+    width: auto;
+    margin-right: 1.6rem;
+}
+
+.img-snap,
+.img-polygon{
+    height: 100%;
+    height: 2rem;
+    width: auto;
+    margin-right: 0.3rem;
+}
+
+/* Applications page------------------------------------------------------------------------*/
+
+.par-con{
+    margin-top: 0.8rem;
+}
+.par-hd{
+    font-family: 'Disket-Mono-Bold';
+}
+label {
+    display: block; 
+    font-weight: bold;
+}
+.application-form-con{
+    margin-top: 2rem;
+   
+}
+.app-form{
+    display: flex;
+    flex-direction: column;
+}
+.sub-button{
+    margin-top: 2rem;
+    width: 10rem;
+    background-color: #212121;
+    color: #fbf8f3;
+    border-radius: 5px;
+}
+.sub-button:hover{
+    background-color: #fbf8f3;
+    color: #212121;
+}
+
+
+/* The Modal */
+
+.modal{
+    position: fixed;
+    z-index: 1;
+    left: 0%;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  #myModal{
+    display: none ;
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: #fbf8f3;
+    margin: 15% auto;
+    padding: 0.7rem;
+    border: 1px solid #212121;
+    width: 30%;
+    text-align: center;
+    border-radius: 12px;
+  }
+  
+  /* Close Button */
+  .close {
+    color: #212121;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+   
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #8BC3D9;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  /*Bounty details page------------------------------------------------------------------------*/
+
+  .sec-con{
+    margin-bottom: 2rem;
+  }
+.panel-con{
+    margin-left: -1rem;
+    
+}
+
+
+/*Login ------------------------------------------------------------------------*/
+.area-sign-box{
+    display: flex;
+    justify-content: center;
+}
+
+.main-sign-con{
+    border: 1px dotted #212121;
+    border-radius: 24px;
+    max-width: 30VW;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    padding: 0.5rem;
+}
+.sign-text{
+    font-family:'Disket-Mono-Bold';
+}
+ 
+.form-con{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+ 
+}
+
+input[type="text"],
+input[type="password"]{
+    background-color: #ecececaf;
+    border: 0px;
+    border: 1px solid #212121;
+    border-radius: 6px;
+    padding: 0.3rem;
+}
+input[type="submit"]{
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    background-color: #212121;
+    padding: 0.3rem;
+    max-width: 6rem;
+    margin-top: 1rem;
+    color: #fbf8f3;
+
+}
+.sign-up-con{
+    margin-left: 0.8rem;
+}
+
+.sig-but{
+    background-color: #212121;
+    border-radius: 6px;
+    border: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    padding: 0.3rem;
+}
+
+  
+.sig-text{
+    color:#DDE7DF;
+    text-decoration: none;
+    font-size: 0.7rem;
+}
+.middle-area-con{
+    display: flex;
+    justify-content: center;
+    height: 90vh;
+}
+.login-area-con{
+    border: 1px dotted #212121;
+    border-radius: 24px;
+    justify-self: center;
+    width: 30vw;
+    padding: 0.4rem;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    height: 45vh;
+}
+
+/*comingsoon ------------------------------------------------------------------------*/
+
+.content-area{
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.cs-main-con{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+/*Threads ------------------------------------------------------------------------*/
+
+.bounty-hub-area{
+    padding: 0rem 2.2rem;
+}
+.post-title{
+    font-size: 0.85rem;
+    margin-top: 0.7rem;
+}
+.thread-list-con{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.thread-obj-con{
+    border-bottom: 1px solid #828181;
+    padding-bottom: 0.5rem;
+    max-width: 39vw;
+}
+.thread-par-con{
+    margin-top: 0.7rem;
+    margin-bottom: 0.5rem;
+}
+.tpar{
+    font-size: 0.6rem;
+    color: #828181;
+}
+.tline-dotted{
+    border-bottom: 1px dotted #212121;
+}
+.tlast-line-con{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.cat-box{
+    border-radius: 3px;
+    background-color: #B8ADFA;
+    padding:0rem 0.4rem;
+    margin:0.2rem 0.5rem ;
+}
+.type-box{
+    background-color: #212121;
+    border-radius: 8px;
+    padding:0rem 0.4rem;
+    margin: 0.2rem 0.5rem ;
+}
+.typ-text{
+    color: #DDE7DF;
+}
+
+.user-box{
+    border:1px solid #212121;
+    border-radius: 8px;
+    padding:0rem 0.4rem;
+    margin:0.2rem  0.5rem ;
+}
+.user-name{
+    color: #828181;
+}
+
+.img-comment{
+    height: 100%;
+    height: 1rem;
+    width: auto;
+    margin: 0.2rem 0.5rem ;
+}
+.img-like{
+    height: 100%;
+    height: 1rem;
+    width: auto;
+    margin: 0.2rem 0.5rem ;
+}
+.heart-moji{
+    font-size: 1rem;
+    width: auto;
+    margin: 0.2rem 0.5rem ;   
+}
+
+/*Comment area ------------------------------------------------------------------------*/
+.comment-area-con{
+    display: "none";
+}
+.user-comm-text{
+    color: #BF372A;
+}
+.comment-con{
+    margin-top: 1rem;
+    display: block;
+    border-bottom: 1px solid #21212123;
+    max-width: 28vw;
+}
+.content-con{
+    margin-top: 0.4rem;
+    margin-left: 0.3rem;
+    margin-bottom: 0.8rem;
+    border-left: 1px dotted #2121214c;
+    padding: 0rem 1rem;
+    
+}
+.comm-text{
+    font-size: 0.65rem;
+    margin-left: 0.4rem;
+    text-align: left;
+}
+.com-user{
+    margin-top: 1rem;
+    font-family:'DMMONO-Medium' ;
+    font-size: 0.75rem;
+    color: #8BC3D9;
+
+}
+
+/* Guild Library area ------------------------------------------------------------------------*/
+
+.file-link{
+    text-decoration: underline;
+}
+.img-lib-thumb{
+    width: 100%;
+    width: 3rem;
+    height: auto;
+
+}
+
+.item-lib-con{
+    margin: 0.4rem 0rem;
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: center;
+
+}
+
+.text-con-links{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: center;
+    margin-left: 0.4rem;
+
+}
+.cate-box-con{
+    background-color: #8BC3D9;
+    border-radius: 4px;
+    padding: 0rem 0.3rem;
+    max-width: 3.5rem;
+}
+.more-xcite{
+    margin-left: 2rem;
+    margin-top: 1rem;
+}

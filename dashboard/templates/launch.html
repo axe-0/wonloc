@@ -1,0 +1,44 @@
+{% extends 'header.html' %}
+{% load static %}
+{% block content %}
+<header>
+    <hd class="hd-con">
+        <div class="logo-con">
+            <p class="logo">WONYE</p>
+        </div>
+        <div class="lne-con">
+            <div class="line-lie"></div>
+        </div>
+        <div class="launch-con">
+            <a href="{% url 'user_auth:login'%}" class="lan-link">LAUNCH APP</a>
+        </div>
+    </hd>
+</header>
+
+<section class="main-body">
+    <div class="para-con">
+        <div class="f-sen">
+            <p class="lan-text f-line">A NEW WAY T <span ><img src="{% static 'images/flwrone.png' %}" alt="ytk-design"class="FL-O"></span> DO COMMUNITY</p>
+        </div>
+        <div class="ttf-sen">
+            <div class="ttf-grid">
+                <div class="girlpic"><img src="{%static 'images/girl.png' %}" alt="girl" class="img-girl"></div>
+                <p class="lan-text snd-line">NEW IDEAS <span><img src="{%static 'images/Arrow 1.png' %}" alt="arrow" class="img-Arrone"></span> RESOURCES</p>
+                <p class="lan-text thrd-line">OPENSOURCE CULTURE</p>
+                <div class="forth-line">
+                    <p class="lan-text frth-line">F </p>
+                    <div class="cure-square"></div> 
+                    <p class="lan-text frth-line"> R MAKERS <span><img src="{% static 'images/flwrtwo.png' %}" alt="ytk-flower" class="img-fltwo "></span> DOERS</p>
+                    
+                </div>
+                
+                <div class="guys-pic"><img src="{%static 'images/guys.png' %}" alt="guys" class="img-guys"></div>
+            </div>
+        </div>
+        <div class="l-sen">
+            <p class="lan-text fth-line">CREATOR[S] <span><img src="{%static 'images/Arrow 2.png' %}" alt="arrow" class="red-arrow"></span> JOIN A GUILD</p>
+        </div>
+    </div>
+
+</section>
+{% endblock %}

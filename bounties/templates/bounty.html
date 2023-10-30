@@ -1,0 +1,35 @@
+
+<div class="bounty-hub-area">
+    <div class="head-bount-con">
+        <h3 class="guild-heading">💰GUILD BOUNTIES</h3>
+    </div>
+    <div class="bounty-par-con">
+        <p>GUILD BOUNTIES ARE A WAY IN WHCH COMMUNITIES/GUILDS CAN BUILD A HIGH QUALITY RESOURCE LIBRARY BY ENGAGING WITH EXPERTS.</p>
+    </div>
+    <div class="bounty-list-con">
+        {% for bount in bounties %}
+        <div class="bount-obj-con">
+            <div class="top-bount-con">
+                <p class="bont">BOUNTY</p>
+                <div class="line-bount"></div>
+            </div>
+            <div class="title-bount-con">
+                <p class="bount-title"><a href="{%url 'hub:bountydetails' bount.id %} " class="bount-title">{{bount.bounty_title}}</a></p>
+            </div>
+            <div class="button-bount-con">
+                {% for apply in bount.apply_set.all %}
+                <button class="button-mainstyle butt-apply"><a href="{%url 'hub:bountyapply' apply.id %}">APPLY</a></button>
+                {% endfor %}
+                {% for fund in bount.fund_set.all %}
+                <button class="button-mainstyle butt-fund"><a href="{%url 'hub:bountyfund' fund.id %}">$FUND</a></button>
+                {% endfor %}
+                <button class="button-mainstyle butt-cat"><a href="#">{{bount.category_choice|upper }}</a></button>
+                
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+

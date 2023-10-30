@@ -1,0 +1,74 @@
+{%extends 'header.html'%}
+{% load static %}
+
+{% block content %}
+
+<header>
+    <hd class="hd-con">
+        <div class="logo-con">
+            <p class="logo">WONYE</p>
+        </div>
+        <div class="search-con">
+            <div class="search-bar">
+                <p class="search-text"></p>
+            </div>
+        </div>
+        <div class="welcome-con">
+            <a href="{%url 'user_auth:logout'%}" class="lan-link">LOGOUT</a>
+        </div>
+  
+</header>
+
+<div class="content-discov">
+    <div class="cs-box-con">
+        <div class="comingsoon-area">
+            <div class="csoon-con">
+                <p class="flt-text">COMING SOON! ------- (CATEGORY FILTERS)</p>
+            </div>
+            <div class="filtr-con  music-con">
+                <p class="flt-text">MUSIC</p>
+            </div>
+            <div class="filtr-con tiktok-con">
+                <p class="flt-text">TIKTOK</p>
+            </div>
+            <div class="filtr-con yt-con">
+                <p class="flt-text">YOUTUBE</p>
+            </div>
+            <div class="filtr-con twitt-con">
+                <p class="flt-text">X-(TWEETS)</p>
+            </div>
+            <div class="filtr-con business-con">
+                <p class="flt-text">BUSINESS</p>
+            </div>
+            <div class="filtr-con finance-con">
+                <p class="flt-text">FINANCE</p>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="discov-area">
+        <div class="dicov-text-con">
+            <h2 class="discov-head">DISCOVER COMMUNITIES</h2>
+            <p class="discrip-text">JOIN A COMMUNITY OF CREATORS ,ASK QUESTIONS, GET INSIGHTS, CONTRIBUTE AND PARTICIPATE IN COMMUNITY JAMS.</p>
+    
+        </div>
+        <div class="thumbnail-con">
+            {% block thumbnail_area %} {% endblock %}
+            <div class="img-x-con">
+                <img src="{%static 'images/ximage.png' %}" alt="x-image" class="img-x-icon">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="trending-area">
+    {% block trending_area %} {% endblock %}
+</div>
+
+
+
+{% endblock %}

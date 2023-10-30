@@ -1,0 +1,38 @@
+{%extends "header.html"%}
+{% block title %}Sign Up{% endblock %}
+{%block content%}
+<header>
+    <hd class="hd-con">
+        <div class="logo-con">
+            <a href="{%url 'dashboard:landing' %}">
+                <p class="logo">WONYE</p>
+            </a>
+            
+        </div>
+        <div class="lne-con">
+            <div class="line-lie"></div>
+        </div>
+        <div class="launch-con">
+            <a href="{%url 'user_auth:login' %}" class="lan-link">LOGIN </a>
+        </div>
+    </hd>
+</header>
+
+<div class="area-sign-box">
+    <div class="main-sign-con">
+        <h3 class="sign-text"> 📝 - SIGN UP - </h3>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-con" >
+            {{form.as_p}}
+            <input type="submit" value="Sign Up" />
+        </div>
+    </form>
+    </div>
+</div>
+
+
+
+
+
+{% endblock %}

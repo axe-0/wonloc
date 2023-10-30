@@ -1,0 +1,34 @@
+{% extends 'header.html' %}
+{% load static %}
+
+{% block content %}
+<header>
+    <hd class="hd-con">
+        <div class="logo-con">
+            <a href="{%url 'dashboard:discover' %}">
+                <p class="logo">WONYE</p>
+            </a>
+            
+        </div>
+        <div class="lne-con">
+            <div class="line-lie"></div>
+        </div>
+        <div class="launch-con">
+            <a href="{%url 'user_auth:logout'%}" class="lan-link">LOGOUT</a>
+        </div>
+    </hd>
+</header>
+
+<div class="content-area">
+    <div class="cs-main-con">
+        <h3>-{{thumb_cat|upper}} HUB-</h3>
+        <h1>🚧UNDER CONSTRUCTION🚧</h1>
+        <p>⏳WERE 50% THERE, HANG TIGHT!⏳</p>
+    </div>
+    
+</div>
+
+
+
+
+{% endblock %}

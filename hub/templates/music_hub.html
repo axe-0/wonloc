@@ -1,0 +1,59 @@
+{% extends 'header.html' %}
+{% load static %}
+
+{% block content %}
+<header>
+    <hd class="hd-con">
+        <div class="logo-con">
+            <a href="{%url 'dashboard:discover' %}">
+                <p class="logo">WONYE</p>
+            </a>
+            
+        </div>
+        <div class="lne-con">
+            <div class="line-lie"></div>
+        </div>
+        <div class="launch-con">
+            <a href="{%url 'user_auth:logout'%}" class="lan-link">LOGOUT</a>
+        </div>
+    </hd>
+</header>
+
+<div class="music-hub-area">
+    <div class="hub-head-con">
+        <h2 class="hub-head">/MUSIC GUILD HUB</h2>
+    </div>
+    <div class="music-hub-grid">
+        <div class="first-col">
+            <div class="f-col-con">
+                <div class="hub-about">
+                    <p class="hub-about-text">THE MUSIC MAKERS GUILD IS AN ARTIST SUPPORT COMMUNITY. JUMPSTART YOUR JOURNEY IN MUSIC WITH FREE RESOURCES , TIPS AND TRICKS. ASK THE COMMUNITY FOR ADVICE. LEARN AND SHARE KNOWLEDGE
+                        WITH OTHER GUILD MEMBERS.</p>
+                </div>
+                <div class="bounty-area-con">
+                    {% include "bounty.html" %}
+                        
+                </div>
+            </div>
+        </div>
+        <div class="second-col">
+            <div class="s-col-con">
+                {% include "threads_list.html" %}
+            </div>
+        </div>
+        <div class="third-col">
+            <div class="t-col-con">
+                {% include "library.html" %}
+            </div>
+            <div class="more-xcite">
+                <div class="head-bount-con">
+                    <h3 class="guild-heading">🛠️COMING SOON!</h3>
+                </div>
+                <div class="hub-about">
+                    <p class="hub-about-text">WE'RE WORKING HARD TO BRING YOU MORE EXCITING FEATURES INTO THE GUILDS, THAT WILL HELP THESE ONLINE COMMUNITIES BE MORE VIBRANT AND GROW AND BE A SOURCE OF COLLABORATION AND GROWTH FOR CREATORS AND MAKERS EVERYWHERE.PLEASE FEEL FREE TO GIVE US FEEDBACK ON HOW WE CAN MAKE YOUR EXPERIENCE AS PART OF THE GUILDS MORE VIBRANT AND ENGAGING.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
