@@ -141,10 +141,16 @@ li{
 }
 .launch-con{
     margin-top: 0.2rem;
+    background-color: #212121;
+    padding: 0.3rem 0.5rem;
+    border-radius: 5px;
 }
 a{
     color: #212121;
     text-decoration: none;
+}
+.lan-link{
+    color: #DDE7DF;
 }
 .lan-link:hover{
     color: #8BC3D9;
