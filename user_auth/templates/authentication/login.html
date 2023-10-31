@@ -22,7 +22,7 @@
         <form action="{% url 'user_auth:authenticate_user' %}" method="post">
             {% csrf_token %}
             <label>Email</label>
-            <input type="text" name="email" placeholder="User" required class="text-field">
+            <input type="text" name="email" placeholder="user@example.com" required class="text-field">
             <br/><br/>
             <label>Password</label>
             <input type="password" name="password" required class="text-field">
